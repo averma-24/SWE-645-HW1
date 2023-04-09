@@ -1,0 +1,250 @@
+<!-- Author: Abhishek Verma, G Number: G01358661 -->
+
+<!-- The HTML code for the Student Survey Form, 
+incorporates various form elements such as text boxes
+to enter personal information, checkboxes to indicate campus preferences, 
+radio buttons to select interests, a dropdown to specify 
+the likelihood of recommendation, a raffle field, 
+a textarea to enter additional comments, 
+and buttons to submit or cancel the form. -->
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap.min.css" />
+  <link rel="stylesheet" href="studentFormStyle.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Student Survey Form</title>
+</head>
+
+<body>
+  <div class="bar">
+    George Mason Student Survey Form
+  </div>
+  <div class="container mt-5">
+
+    <form id="studentForm">
+      <div class="form-group">
+        <label for="firstName">First Name: <span class="required">*</span></label>
+        <input type="text" class="form-control" id="firstName" placeholder="Enter First Name" required
+          pattern="[A-Za-z]+" oninvalid="this.setCustomValidity('Please enter a valid First Name')"
+          oninput="this.setCustomValidity('')" />
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name: <span class="required">*</span></label>
+        <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name" required pattern="[A-Za-z]+"
+          oninvalid="this.setCustomValidity('Please enter a valid Last Name')" oninput="this.setCustomValidity('')" />
+      </div>
+      <div class="form-group">
+        <label for="streetAddress">Street Address: <span class="required">*</span></label>
+        <input type="text" class="form-control" id="streetAddress" placeholder="Enter Street Address" required />
+      </div>
+      <div class="form-group">
+        <label for="city">City: <span class="required">*</span></label>
+        <input type="text" class="form-control" id="city" placeholder="Enter City" required />
+      </div>
+      <div class="form-group">
+        <label for="state">State: <span class="required">*</span></label>
+        <input type="text" class="form-control" id="state" placeholder="Enter State" required />
+      </div>
+      <div class="form-group">
+        <label for="zip">Zip: <span class="required">*</span></label>
+        <input type="text" class="form-control" id="zip" placeholder="Enter Zip" required pattern="^\d{5}$"
+          oninvalid="this.setCustomValidity('Zip code must be 5 digits long.')" oninput="this.setCustomValidity('')" />
+      </div>
+      <div class="form-group">
+        <label for="telephoneNumber">Telephone Number: <span class="required">*</span></label>
+        <input type="text" class="form-control" id="telephoneNumber" placeholder="Enter Telephone Number" required
+          pattern="^\d{10}$" oninvalid="this.setCustomValidity('Telephone must be 10 digits long.')"
+          oninput="this.setCustomValidity('')" />
+      </div>
+      <div class="form-group">
+        <label for="email">Email: <span class="required">*</span></label>
+        <input type="email" class="form-control" id="email" placeholder="Enter Email" required />
+      </div>
+      <div class="form-group">
+        <label for="dateOfSurvey">Date of Survey: <span class="required">*</span></label>
+        <input type="date" class="form-control" id="dateOfSurvey" required />
+      </div>
+
+      <div class="form-group-poll">
+        <label>What did you like most about the campus?</label>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="students" id="students" />
+          <label class="form-check-label" for="students">
+            Students
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="location" id="location" />
+          <label class="form-check-label" for="location">
+            Location
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="campus" id="campus" />
+          <label class="form-check-label" for="campus">
+            Campus
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="atmosphere" id="atmosphere" />
+          <label class="form-check-label" for="atmosphere">
+            Atmosphere
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="dormRooms" id="dormRooms" />
+          <label class="form-check-label" for="dormRooms">
+            Dorm Rooms
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="sports" id="sports" />
+          <label class="form-check-label" for="sports">
+            Sports
+          </label>
+        </div>
+      </div>
+      <div class="form-group-poll">
+        <label>How did you become interested in the university?</label>
+
+
+        <div class="form-check form-check">
+          <input class="form-check-input" type="radio" id="friends" name="interestSource" value="friends" />
+          <label class="form-check-label" for="friends">Friends</label>
+        </div>
+
+
+
+        <div class="form-check form-check">
+          <input class="form-check-input" type="radio" id="television" name="interestSource" value="television" />
+          <label class="form-check-label" for="television">Television</label>
+        </div>
+        <div class="form-check form-check">
+          <input class="form-check-input" type="radio" id="internet" name="interestSource" value="internet" />
+          <label class="form-check-label" for="internet">Internet</label>
+        </div>
+        <div class="form-check form-check">
+          <input class="form-check-input" type="radio" id="other" name="interestSource" value="other" />
+          <label class="form-check-label" for="other">Other</label>
+        </div>
+      </div>
+      <div class="form-group-poll mt-3">
+        <label for="recommendation">Likelihood of recommending this school:</label>
+        <select class="form-control" id="recommendation">
+          <option selected disabled>Select an Option</option>
+          <option>Very Likely</option>
+          <option>Likely</option>
+          <option>Unlikely</option>
+        </select>
+      </div>
+      <div class="form-group-poll">
+        <label for="raffle">Raffle</label>
+        <input type="text" class="form-control" id="raffle" name="raffle"
+          placeholder="Enter at least ten comma-separated numbers (1-100)">
+        <div id="raffle-error"></div>
+        <div id="raffle-success"></div>
+      </div>
+
+      <div class="form-group-poll mt-3">
+        <label for="comments">Additional comments:</label>
+        <textarea class="form-control" id="comments" rows="3"></textarea>
+      </div>
+      <div class="form-group mt-3 text-center">
+        <button id="submit-btn" type="submit" class="btn btn-success mr-2">Submit</button>
+        <button id="cancel-btn" type="reset" class="btn btn-danger">Cancel</button>
+      </div>
+    </form>
+    <footer class="footer py-3">
+      <div class="container" style="text-align: center">
+        <p class="small mb-0 text-light">
+          &copy;
+          <script>document.write(new Date().getFullYear())</script> Created With <i class="fa fa-heart"></i> By <a
+            href="https://www.linkedin.com/in/a-verma26/" target="_blank"><span class="text-warning"
+              title="Bootstrap 4 Themes and Dashboards">Abhishek Verma</span></a>
+        </p>
+      </div>
+    </footer>
+  </div>
+</body>
+
+<script>
+  //Get the Raffle field and error message elements
+  var formField = document.getElementById("studentForm");
+  var raffleField = document.getElementById("raffle");
+  var raffleError = document.getElementById("raffle-error");
+
+  // Add an event listener to the form submit button
+  formField.addEventListener("submit", function (event) {
+    // Prevent the default form submission behavior
+    event.preventDefault();
+
+    // Validate the Raffle field
+    var raffleValue = raffleField.value.trim();
+    if (raffleValue == "") {
+      raffleField.classList.remove("is-invalid");
+      raffleError.textContent = "";
+      setTimeout(function () {
+        alert("Your form has been submitted successfully.");
+        formField.reset();
+      }, 200);
+
+
+      return;
+    }
+
+    var raffleNumbers = raffleValue.split(",");
+    var valid = true;
+    var errorMessage = "";
+    if (raffleNumbers.length < 10) {
+      valid = false;
+      errorMessage = "Please enter at least 10 comma separated numbers";
+    } else {
+      for (var i = 0; i < raffleNumbers.length; i++) {
+        var num = parseInt(raffleNumbers[i].trim());
+        if (isNaN(num) || num < 1 || num > 100) {
+          valid = false;
+          errorMessage = "Please enter numbers between 1 and 100 separated by commas";
+          break;
+        }
+      }
+    }
+
+    // Display the error message if validation fails
+    if (!valid) {
+      raffleField.classList.add("is-invalid");
+      raffleError.textContent = errorMessage;
+    } else {
+      raffleField.classList.remove("is-invalid");
+      raffleError.textContent = "";
+      setTimeout(function () {
+        alert("Your form has been submitted successfully.");
+        formField.reset();
+      }, 200);
+
+
+      return;
+
+    }
+  });
+
+  // Add an event listener to the form cancel button to reset the form
+  document.getElementById("cancel-btn").addEventListener("click", function (event) {
+    event.preventDefault();
+    formField.reset();
+    raffleField.classList.remove("is-invalid");
+    raffleError.textContent = "";
+  });
+
+
+</script>
+
+</html>

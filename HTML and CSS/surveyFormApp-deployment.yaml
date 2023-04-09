@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: surveryFormApp-deployment
+  labels:
+    app: surveryFormApp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: surveryFormApp
+  template:
+    metadata:
+      labels:
+        app: surveryFormApp
+    spec:
+      containers:
+        - name: surveryFormApp
+          image: docker-image:tag
+          ports:
+            - containerPort: 80
